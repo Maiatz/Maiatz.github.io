@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projects</title>
 
-<!-- Serif font (Lora by Olga Karpushina) -->
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
 <style>
@@ -17,7 +16,7 @@ body {
     color: #191970;
 }
 
-/* NAVIGATION */
+/* NAV */
 nav ul {
     list-style: none;
     padding: 0;
@@ -43,7 +42,7 @@ h1 {
 }
 
 .project {
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
 a {
@@ -53,7 +52,7 @@ a {
 /* 👻 GHOST IMAGE */
 .hover-image {
     position: fixed;
-    width: 320px;
+    width: 340px;
     pointer-events: none;
     z-index: 1000;
 
@@ -95,43 +94,81 @@ a {
 
 <h1>Projects</h1>
 
-<!-- 👻 Ghost image element -->
+<!-- 👻 ghost image -->
 <img id="hoverImage" class="hover-image" src="">
 
 <div class="project">
-08/2025 
+08/2025  
 <a href="https://echogonewrong.com/photo-reportage-from-the-exhibition-a-table-is-a-wall-a-door-a-home-by-maike-statz-at-the-part-time-gallery/" target="_blank"
-   data-image="YOUR-IMAGE-URL-1.jpg">
+   data-image="YOUR-IMAGE-1.jpg">
 "A table is a wall, a door, a home"
-</a>
+</a> solo exhibition at Part Time Gallery, curated by Liene and Oskars Pavlovskis, Riga LV
 </div>
 
 <div class="project">
-09/2024 
-<a href="#" data-image="YOUR-IMAGE-URL-2.jpg">
+09/2024  
+<a href="https://www.fergustibbs.com/" target="_blank"
+   data-image="YOUR-IMAGE-2.jpg">
 "Hosting Infrastructures"
-</a>
+</a> exhibition and artistic collaboration with Fergus Tibbs, Isotop Fellesatelier Bergen
 </div>
 
 <div class="project">
-05/2024 
-<a href="#" data-image="YOUR-IMAGE-URL-3.jpg">
+05/2024  
+<a href="https://www.arkitektur.no/aktuelt/arkitektur/nye-filmdager-i-bergen/" target="_blank"
+   data-image="YOUR-IMAGE-3.jpg">
 "INTRANSIT"
-</a>
+</a> architecture film program at Cinemateket Bergen in partnership with Bergen arkitektforening
 </div>
 
 <div class="project">
-06–08/2023 
-<a href="#" data-image="YOUR-IMAGE-URL-4.jpg">
+06–08/2023  
+<a href="https://www.kunstsenter.no/#/program/617" target="_blank"
+   data-image="YOUR-IMAGE-4.jpg">
 "Hosting Space"
-</a>
+</a> exhibition, public event programme and interior design at Hordaland kunstsenter, Bergen
 </div>
 
 <div class="project">
-01/2022–06/2023 
-<a href="#" data-image="YOUR-IMAGE-URL-5.jpg">
-"Dissident Publics"
-</a>
+01/2022–06/2023  
+<a href="https://rom.no/program/utstillinger/dissident-publics-future-artefacts-of-queer-methodologies" target="_blank"
+   data-image="YOUR-IMAGE-5.jpg">
+"Dissident Publics: Future Artefacts of Queer Methodologies"
+</a> with Exutoire at ROM, Oslo
+</div>
+
+<div class="project">
+2023–2024  
+<a href="https://www.instagram.com/p/Cp5LTmCo7Q8/" target="_blank"
+   data-image="YOUR-IMAGE-6.jpg">
+"bias: bodies in architecture and structures"
+</a> magazine issue 1 & 2, published by NOGOODS
+</div>
+
+<div class="project">
+2022–2024  
+Co-founder and artistic director of NOGOODS studio and project space, Bergen
+</div>
+
+<div class="project">
+02/2023  
+<a href="https://www.accupass.com/event/2302140600231578310092" target="_blank"
+   data-image="YOUR-IMAGE-7.jpg">
+"Table Memories"
+</a> writing and drawing workshop at Not Just Library, Taiwan Design Research Institute, Taipei
+</div>
+
+<div class="project">
+05–12/2022  
+"Løse deler" furniture installation for Over regnbuen at Preus Museum, Horten
+</div>
+
+<div class="project">
+2019  
+<a href="https://sandberg.nl/graduation2019/maike-statz" target="_blank"
+   data-image="YOUR-IMAGE-8.jpg">
+"Capillary Malformation"
+</a> audio walk and installation, Studio for Immediate Spaces graduation exhibition, Amsterdam
 </div>
 
 <script>
@@ -142,13 +179,11 @@ let mouseY = 0;
 let ghostX = 0;
 let ghostY = 0;
 
-// track mouse
 document.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
 });
 
-// ghost lag animation
 function animate() {
     ghostX += (mouseX - ghostX) * 0.08;
     ghostY += (mouseY - ghostY) * 0.08;
@@ -160,12 +195,9 @@ function animate() {
 }
 animate();
 
-// hover behavior
 document.querySelectorAll("a[data-image]").forEach(link => {
-
     link.addEventListener("mouseenter", () => {
         hoverImage.src = link.getAttribute("data-image");
-
         setTimeout(() => {
             hoverImage.style.opacity = 0.6;
         }, 80);
