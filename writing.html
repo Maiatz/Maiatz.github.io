@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Writing</title>
 
-<!-- Serif font (Lora by Olga Karpushina) -->
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
 <style>
@@ -17,7 +16,7 @@ body {
     color: #191970;
 }
 
-/* NAVIGATION */
+/* NAV (consistent with Projects) */
 nav ul {
     list-style: none;
     padding: 0;
@@ -42,18 +41,19 @@ h1 {
     margin-bottom: 30px;
 }
 
-.entry {
-    margin-bottom: 25px;
+.project {
+    margin-bottom: 22px;
 }
 
+/* LINKS */
 a {
     color: #8B0000;
 }
 
-/* 👻 GHOST IMAGE */
+/* GHOST IMAGE */
 .hover-image {
     position: fixed;
-    width: 300px;
+    width: 320px;
     pointer-events: none;
     z-index: 1000;
 
@@ -95,47 +95,103 @@ a {
 
 <h1>Writing</h1>
 
-<!-- 👻 Ghost image -->
 <img id="hoverImage" class="hover-image" src="">
 
-<div class="entry">
-04/2026 
+<div class="project">
+04/2026  
 <a href="https://errantbodies.org/project/hosting_space" target="_blank"
-   data-image="YOUR-IMAGE-URL-1.jpg">
+   data-image="YOUR-IMAGE-1.jpg">
 "Hosting Space"
-</a>
+</a> book published by Hordaland Kunstsenter and Errant Bodies Press (Bergen / Berlin)
 </div>
 
-<div class="entry">
-02/2026 
+<div class="project">
+02/2026  
 <a href="https://metode.rom.no/articles/essay/closed-for-renovation-exhibition-as-method-for-unworlding" target="_blank"
-   data-image="YOUR-IMAGE-URL-2.jpg">
-"Closed for Renovation"
-</a>
+   data-image="YOUR-IMAGE-2.jpg">
+"Closed for Renovation: Exhibition as Method for (Un)worlding"
+</a> article published in Metode Vol. 4: Exhibition as Method (ROM, online)
 </div>
 
-<div class="entry">
-08/2025 
+<div class="project">
+08/2025  
 <a href="https://hverdag.sumupstore.com/product/a-table-is-a-wall-a-door-a-home" target="_blank"
-   data-image="YOUR-IMAGE-URL-3.jpg">
+   data-image="YOUR-IMAGE-3.jpg">
 "A table is a wall a door a home"
-</a>
+</a> book published by Hverdag Books (Moss, NO)
 </div>
 
-<div class="entry">
-04/2025 
+<div class="project">
+04/2025  
 <a href="https://contemporaryartstavanger.no/archive/nnena-kalu-creations-of-care" target="_blank"
-   data-image="YOUR-IMAGE-URL-4.jpg">
+   data-image="YOUR-IMAGE-4.jpg">
 "Nnena Kalu: Creations of Care"
-</a>
+</a> review for Contemporary Art Stavanger
 </div>
 
-<div class="entry">
-12/2024 
+<div class="project">
+12/2024  
 <a href="https://dilettantearmy.com/articles/vampire-clubs" target="_blank"
-   data-image="YOUR-IMAGE-URL-5.jpg">
+   data-image="YOUR-IMAGE-5.jpg">
 "Vampire Clubs"
-</a>
+</a> article written with Sara Clugage and Matilda Moors for Party As Form, published by Dilettante Army / PRAKSIS Presents
+</div>
+
+<div class="project">
+09/2024  
+<a href="https://www.contemporaryartstavanger.no/building-a-better-world-part-ii-opening-methods/" target="_blank"
+   data-image="YOUR-IMAGE-6.jpg">
+"Building a Better World Part II: Opening Methods"
+</a> essay for Contemporary Art Stavanger
+</div>
+
+<div class="project">
+03/2024  
+<a href="https://www.contemporaryartstavanger.no/building-a-better-world-function-malfunction-and-unruly-bodies/" target="_blank"
+   data-image="YOUR-IMAGE-7.jpg">
+"Building a Better World Part I: Function, Malfunction and Unruly Bodies"
+</a> essay for Contemporary Art Stavanger
+</div>
+
+<div class="project">
+12/2023  
+"The Eternal Party: Illusion and transgression in the vampire club scene" in Party Planner Vol. 3: Party Trick (Office Party, INT)
+</div>
+
+<div class="project">
+09/2022  
+"The Superb Lyrebird" in fem tusen og fem (fanzine edited by Nayara Leite, Bergen)
+</div>
+
+<div class="project">
+03/2022  
+<a href="https://karmaklubb.com/statz_rainbow-palace" target="_blank"
+   data-image="YOUR-IMAGE-8.jpg">
+"Rainbow Palace"
+</a> published by Karmaklubb* and IGWTLI; also presented at METEOR Festival, Open Out Festival, and Site Writing archive (Jane Rendell)
+</div>
+
+<div class="project">
+2021  
+"FiresNearMe" in Robida Magazine Issue 7: forest (Topolò, IT)
+</div>
+
+<div class="project">
+2020  
+"The House: Moving In" in Immediate Spaces 16–19 (Park Books, Zürich)
+</div>
+
+<div class="project">
+2019  
+"Ghostwriting Files: Adding a voice to this polyphonic dialogue" co-authored with María Mazzanti, published by Het Nieuwe Instituut
+</div>
+
+<div class="project">
+2019  
+<a href="https://www.sandberg.nl/media/document/original/maike_statz_out_of_place_out_of_time1553695037.pdf" target="_blank"
+   data-image="YOUR-IMAGE-9.jpg">
+"Out of Place, Out of Time"
+</a> MA thesis, Sandberg Instituut
 </div>
 
 <script>
@@ -146,13 +202,11 @@ let mouseY = 0;
 let ghostX = 0;
 let ghostY = 0;
 
-// track mouse
 document.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
 });
 
-// ghost lag
 function animate() {
     ghostX += (mouseX - ghostX) * 0.08;
     ghostY += (mouseY - ghostY) * 0.08;
@@ -164,9 +218,7 @@ function animate() {
 }
 animate();
 
-// hover behavior
 document.querySelectorAll("a[data-image]").forEach(link => {
-
     link.addEventListener("mouseenter", () => {
         hoverImage.src = link.getAttribute("data-image");
 
