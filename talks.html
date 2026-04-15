@@ -1,28 +1,185 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Talks and Workshops</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talks and Workshops</title>
+
+<!-- Serif font (Lora by Olga Karpushina) -->
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+body {
+    background-color: lavender;
+    font-family: 'Lora', serif;
+    line-height: 1.7;
+    margin: 20px;
+    color: #191970;
+}
+
+/* NAV */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+nav a[href="talks.html"] {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* TYPOGRAPHY */
+h1 {
+    margin-bottom: 30px;
+}
+
+.entry {
+    margin-bottom: 25px;
+}
+
+a {
+    color: #8B0000;
+}
+
+/* 👻 GHOST IMAGE */
+.hover-image {
+    position: fixed;
+    width: 320px;
+    pointer-events: none;
+    z-index: 1000;
+
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    
+    filter: blur(2px);
+    transition: opacity 0.6s ease;
+
+    mix-blend-mode: multiply;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hover-image {
+        display: none !important;
+    }
+}
+</style>
 </head>
 
+<body>
+
 <nav>
-    <ul>
-        <li><a href="index.html">Maike Statz</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="writing.html">Writing</a></li>
-        <li><a href="talks.html">Talks and Workshops</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
+<ul>
+    <li><a href="index.html">Maike Statz</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="writing.html">Writing</a></li>
+    <li><a href="talks.html">Talks and Workshops</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+</ul>
 </nav>
 
-<body>
-<body style="background-color:lavender;line-height: 150%;"></body>
+<h1>Talks and Workshops</h1>
 
-<h1><font color=#191970>Talks and Workshops</font></h8>
-     <p><font size="4"><font color=#191970>02/2024 Guest speaker <a href="https://kunstnerneshus.no/en/program/events/karmaklubb-friends" target="_blank" style="color:LightGreen;">“Art and public space: Queer in/visibility as activism”</a> symposium organised by Karmaklubb* at Kunstnernes Hus Oslo
-          <br>09/2023 Co-organiser and speaker (NOGOODS) <a href="https://rom.no/en/news/events/making-public-utopias" target="_blank" style="color:LightGreen;">"Making Public Utopias"</a> round table with Exutoire, Itziar González Virós and Nora-Swantje Almes at ROM Oslo
-          <br>09/2022 Guest speaker (NOGOODS) <a href="https://www.kunsthall.no/en/media/plattformqueer-spaces/" target="_blank" style="color:LightGreen;">"Queer Spaces?"</a> Plattform lecture and debate series moderated by <a href="http://www.noraswantjealmes.com/" target="_blank" style="color:LightGreen;"> Nora-Swantje Almes</a> at <a href="https://www.kunsthall.no/en/" target="_blank" style="color:LightGreen;">Bergen Kunsthall</a> Bergen
-          <br>2021 <a href="https://karmaklubb.com/maike_danja" target="_blank" style="color:LightGreen;">"A World of One’s Own"</a> performative online lecture with <a href="http://www.danjaburchard.com/" target="_blank" style="color:LightGreen;">Danja Burchard</a> hosted by Karmaklubb* Online
-          <br>2020 Guest speaker <a href="http://nidacolony.lt/en/1666-nac-library-talks-aspirational-architecture" target="_blank" style="color:LightGreen;">NAC Library Talks: "Aspirational & Architectures"</a> hosted by <a href="http://www.pavlovska.lv/" target="_blank" style="color:LightGreen;">Liene Pavlovska</a> and <a href="http://nidacolony.lt/" target="_blank" style="color:LightGreen;">NIDA Art Colony</a> Vilnius LT
-     </font></p>
+<!-- 👻 Ghost image -->
+<img id="hoverImage" class="hover-image" src="">
+
+<div class="entry">
+02/2024 Guest speaker  
+<a href="https://kunstnerneshus.no/en/program/events/karmaklubb-friends" target="_blank"
+   data-image="YOUR-IMAGE-URL-1.jpg">
+“Art and public space: Queer in/visibility as activism”
+</a>
+</div>
+
+<div class="entry">
+09/2023 Co-organiser and speaker (NOGOODS)  
+<a href="https://rom.no/en/news/events/making-public-utopias" target="_blank"
+   data-image="YOUR-IMAGE-URL-2.jpg">
+“Making Public Utopias”
+</a>
+</div>
+
+<div class="entry">
+09/2022 Guest speaker (NOGOODS)  
+<a href="https://www.kunsthall.no/en/media/plattformqueer-spaces/" target="_blank"
+   data-image="YOUR-IMAGE-URL-3.jpg">
+“Queer Spaces?”
+</a>
+</div>
+
+<div class="entry">
+2021  
+<a href="https://karmaklubb.com/maike_danja" target="_blank"
+   data-image="YOUR-IMAGE-URL-4.jpg">
+“A World of One’s Own”
+</a>
+</div>
+
+<div class="entry">
+2020 Guest speaker  
+<a href="http://nidacolony.lt/en/1666-nac-library-talks-aspirational-architecture" target="_blank"
+   data-image="YOUR-IMAGE-URL-5.jpg">
+“Aspirational & Architectures”
+</a>
+</div>
+
+<script>
+const hoverImage = document.getElementById("hoverImage");
+
+let mouseX = 0;
+let mouseY = 0;
+let ghostX = 0;
+let ghostY = 0;
+
+// track mouse
+document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+// ghost lag animation
+function animate() {
+    ghostX += (mouseX - ghostX) * 0.08;
+    ghostY += (mouseY - mouseY) * 0.08;
+
+    hoverImage.style.left = ghostX + "px";
+    hoverImage.style.top = ghostY + "px";
+
+    requestAnimationFrame(animate);
+}
+animate();
+
+// hover behavior
+document.querySelectorAll("a[data-image]").forEach(link => {
+
+    link.addEventListener("mouseenter", () => {
+        hoverImage.src = link.getAttribute("data-image");
+
+        setTimeout(() => {
+            hoverImage.style.opacity = 0.6;
+        }, 80);
+    });
+
+    link.addEventListener("mouseleave", () => {
+        hoverImage.style.opacity = 0;
+    });
+});
+</script>
+
+</body>
+</html>
