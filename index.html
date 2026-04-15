@@ -8,77 +8,30 @@
 
 <link rel="shortcut icon" type="image/png" href="https://www.dropbox.com/s/j7poexfxv7azbsb/favicon.jpg?raw=1"/>
 
-<!-- Serif font (Lora by Olga Karpushina) -->
+<!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-<style>
-body {
-    background-color: lavender;
-    font-family: 'Lora', serif;
-    line-height: 1.8;
-    margin: 20px;
-    color: #333333; /* dark grey text */
-}
+<!-- Global stylesheet -->
+<link rel="stylesheet" href="style.css">
 
-/* NAV */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #333333;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* IMAGE */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 30px;
-}
-
-/* FOOTER */
-footer {
-    margin-top: 40px;
-    font-size: 14px;
-    color: #333333;
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-</style>
 </head>
 
 <body>
 
 <nav>
-    <ul>
-        <li><a href="index.html">Maike Statz</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="writing.html">Writing</a></li>
-        <li><a href="talks.html">Talks and Workshops</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
+<ul>
+    <li><a class="active" href="index.html">Maike Statz</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="writing.html">Writing</a></li>
+    <li><a href="talks.html">Talks and Workshops</a></li>
+    <li><a href="contact.html">Contact</a></li>
+</ul>
 </nav>
 
 <img src="https://www.dropbox.com/s/cjvycxjylsd7n30/Rainbow%20Palace%20Web%20Image.jpg?raw=1"
-     alt="Collage of a sunset sky, interior photo of a curtain and facade of three timber houses">
+     alt="Collage of a sunset sky, interior photo of a curtain and facade of three timber houses"
+     style="max-width:100%; height:auto; display:block; margin-bottom:30px;">
 
 <footer>
     Last updated: 15.04.2026 ✦

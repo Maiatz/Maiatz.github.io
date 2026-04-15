@@ -3,81 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Talks and Workshops</title>
 
+<link rel="shortcut icon" type="image/png" href="https://www.dropbox.com/s/j7poexfxv7azbsb/favicon.jpg?raw=1"/>
+
+<!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-<style>
-body {
-    background-color: lavender;
-    font-family: 'Lora', serif;
-    line-height: 1.7;
-    margin: 20px;
-    color: #191970;
-}
+<!-- Global stylesheet -->
+<link rel="stylesheet" href="style.css">
 
-/* NAV (consistent system) */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: black;
-}
-
-nav a[href="talks.html"] {
-    font-weight: 600;
-    text-decoration: underline;
-}
-
-/* TYPOGRAPHY */
-h1 {
-    margin-bottom: 30px;
-}
-
-.project {
-    margin-bottom: 22px;
-}
-
-/* LINKS */
-a {
-    color: #8B0000;
-}
-
-/* 👻 GHOST IMAGE */
-.hover-image {
-    position: fixed;
-    width: 320px;
-    pointer-events: none;
-    z-index: 1000;
-
-    opacity: 0;
-    transform: translate(-50%, -50%);
-    
-    filter: blur(2px);
-    transition: opacity 0.6s ease;
-
-    mix-blend-mode: multiply;
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .hover-image {
-        display: none !important;
-    }
-}
-</style>
 </head>
 
 <body>
@@ -85,10 +21,10 @@ a {
 <nav>
 <ul>
     <li><a href="index.html">Maike Statz</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="writing.html">Writing</a></li>
-    <li><a href="talks.html">Talks and Workshops</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a class="active" href="talks.html">Talks and Workshops</a></li>
     <li><a href="contact.html">Contact</a></li>
 </ul>
 </nav>
@@ -99,43 +35,47 @@ a {
 <img id="hoverImage" class="hover-image" src="">
 
 <div class="project">
-02/2024 Guest speaker  
+02/2024  
+Guest speaker  
 <a href="https://kunstnerneshus.no/en/program/events/karmaklubb-friends" target="_blank"
-   data-image="YOUR-IMAGE-URL-1.jpg">
+   data-image="YOUR-IMAGE-1.jpg">
 “Art and public space: Queer in/visibility as activism”
 </a> symposium organised by Karmaklubb* at Kunstnernes Hus, Oslo
 </div>
 
 <div class="project">
-09/2023 Co-organiser and speaker (NOGOODS)  
+09/2023  
+Co-organiser and speaker (NOGOODS)  
 <a href="https://rom.no/en/news/events/making-public-utopias" target="_blank"
-   data-image="YOUR-IMAGE-URL-2.jpg">
+   data-image="YOUR-IMAGE-2.jpg">
 “Making Public Utopias”
-</a> round table with Exutoire, Itziar González Virós and Nora-Swantje Almes at ROM, Oslo
+</a> round table with Exutoire, Itziar González Virós and Nora-Swantje Almes, ROM Oslo
 </div>
 
 <div class="project">
-09/2022 Guest speaker (NOGOODS)  
+09/2022  
+Guest speaker (NOGOODS)  
 <a href="https://www.kunsthall.no/en/media/plattformqueer-spaces/" target="_blank"
-   data-image="YOUR-IMAGE-URL-3.jpg">
+   data-image="YOUR-IMAGE-3.jpg">
 “Queer Spaces?”
-</a> Plattform lecture and debate series at Bergen Kunsthall
+</a> Plattform lecture series, Bergen Kunsthall
 </div>
 
 <div class="project">
 2021  
 <a href="https://karmaklubb.com/maike_danja" target="_blank"
-   data-image="YOUR-IMAGE-URL-4.jpg">
+   data-image="YOUR-IMAGE-4.jpg">
 “A World of One’s Own”
-</a> performative online lecture with Danja Burchard, hosted by Karmaklubb*
+</a> performative online lecture with Danja Burchard, Karmaklubb*
 </div>
 
 <div class="project">
-2020 Guest speaker  
+2020  
+Guest speaker  
 <a href="http://nidacolony.lt/en/1666-nac-library-talks-aspirational-architecture" target="_blank"
-   data-image="YOUR-IMAGE-URL-5.jpg">
+   data-image="YOUR-IMAGE-5.jpg">
 “Aspirational & Architectures”
-</a> NAC Library Talks hosted by NIDA Art Colony, Vilnius
+</a> NAC Library Talks, hosted by NIDA Art Colony, Vilnius
 </div>
 
 <script>
@@ -146,7 +86,7 @@ let mouseY = 0;
 let ghostX = 0;
 let ghostY = 0;
 
-/* track mouse */
+/* mouse tracking */
 document.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;

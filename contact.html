@@ -3,84 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Contact</title>
 
-<!-- Serif font (Lora by Olga Karpushina) -->
+<link rel="shortcut icon" type="image/png" href="https://www.dropbox.com/s/j7poexfxv7azbsb/favicon.jpg?raw=1"/>
+
+<!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
+<!-- Global stylesheet -->
+<link rel="stylesheet" href="style.css">
+
 <style>
-body {
-    background-color: lavender;
-    font-family: 'Lora', serif;
-    line-height: 1.7;
-    margin: 20px;
-    color: #191970;
-}
-
-/* NAV */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: black;
-}
-
-nav a[href="contact.html"] {
-    font-weight: 600;
-    text-decoration: underline;
-}
-
-/* TYPOGRAPHY */
-h1 {
-    margin-bottom: 30px;
-}
-
-/* LINKS */
-a {
-    color: #8B0000;
-}
-
-/* CONTACT BLOCK */
-.contact {
+/* optional: slightly larger contact links for clarity */
+.contact-links a {
     font-size: 18px;
-    margin-top: 20px;
-}
-
-/* 👻 GHOST IMAGE (kept for consistency, optional use) */
-.hover-image {
-    position: fixed;
-    width: 250px;
-    pointer-events: none;
-    z-index: 1000;
-
-    opacity: 0;
-    transform: translate(-50%, -50%);
-    
-    filter: blur(2px);
-    transition: opacity 0.6s ease;
-
-    mix-blend-mode: multiply;
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .hover-image {
-        display: none !important;
-    }
 }
 </style>
+
 </head>
 
 <body>
@@ -88,52 +28,27 @@ a {
 <nav>
 <ul>
     <li><a href="index.html">Maike Statz</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="writing.html">Writing</a></li>
     <li><a href="talks.html">Talks and Workshops</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a class="active" href="contact.html">Contact</a></li>
 </ul>
 </nav>
 
 <h1>Contact</h1>
 
-<!-- optional ghost layer (subtle, mostly decorative here) -->
-<img id="hoverImage" class="hover-image" src="">
+<div class="project contact-links">
 
-<div class="contact">
-<a href="mailto:maike.statz@gmail.com">e-mail</a><br>
-<a href="https://www.instagram.com/maikestatz/?hl=en" target="_blank">instagram</a>
+<a href="mailto:maike.statz@gmail.com">e-mail</a>
+
+<br><br>
+
+<a href="https://www.instagram.com/maikestatz/?hl=en" target="_blank">
+instagram
+</a>
+
 </div>
-
-<script>
-const hoverImage = document.getElementById("hoverImage");
-
-let mouseX = 0;
-let mouseY = 0;
-let ghostX = 0;
-let ghostY = 0;
-
-// track mouse
-document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-});
-
-// ghost animation (very subtle here)
-function animate() {
-    ghostX += (mouseX - ghostX) * 0.08;
-    ghostY += (mouseY - ghostY) * 0.08;
-
-    hoverImage.style.left = ghostX + "px";
-    hoverImage.style.top = ghostY + "px";
-
-    requestAnimationFrame(animate);
-}
-animate();
-
-// no hover images here yet (but system is ready if you want later)
-</script>
 
 </body>
 </html>

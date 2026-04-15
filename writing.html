@@ -3,81 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Writing</title>
 
+<link rel="shortcut icon" type="image/png" href="https://www.dropbox.com/s/j7poexfxv7azbsb/favicon.jpg?raw=1"/>
+
+<!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-<style>
-body {
-    background-color: lavender;
-    font-family: 'Lora', serif;
-    line-height: 1.7;
-    margin: 20px;
-    color: #191970;
-}
+<!-- Global stylesheet -->
+<link rel="stylesheet" href="style.css">
 
-/* NAV (consistent with Projects) */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: black;
-}
-
-nav a[href="writing.html"] {
-    font-weight: 600;
-    text-decoration: underline;
-}
-
-/* TYPOGRAPHY */
-h1 {
-    margin-bottom: 30px;
-}
-
-.project {
-    margin-bottom: 22px;
-}
-
-/* LINKS */
-a {
-    color: #8B0000;
-}
-
-/* GHOST IMAGE */
-.hover-image {
-    position: fixed;
-    width: 320px;
-    pointer-events: none;
-    z-index: 1000;
-
-    opacity: 0;
-    transform: translate(-50%, -50%);
-    
-    filter: blur(2px);
-    transition: opacity 0.6s ease;
-
-    mix-blend-mode: multiply;
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .hover-image {
-        display: none !important;
-    }
-}
-</style>
 </head>
 
 <body>
@@ -85,16 +21,17 @@ a {
 <nav>
 <ul>
     <li><a href="index.html">Maike Statz</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="writing.html">Writing</a></li>
-    <li><a href="talks.html">Talks and Workshops</a></li>
     <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a class="active" href="writing.html">Writing</a></li>
+    <li><a href="talks.html">Talks and Workshops</a></li>
     <li><a href="contact.html">Contact</a></li>
 </ul>
 </nav>
 
 <h1>Writing</h1>
 
+<!-- 👻 ghost image -->
 <img id="hoverImage" class="hover-image" src="">
 
 <div class="project">
@@ -102,7 +39,7 @@ a {
 <a href="https://errantbodies.org/project/hosting_space" target="_blank"
    data-image="YOUR-IMAGE-1.jpg">
 "Hosting Space"
-</a> book published by Hordaland Kunstsenter and Errant Bodies Press (Bergen / Berlin)
+</a> book published by Hordaland Kunstsenter and Errant Bodies Press, Bergen / Berlin
 </div>
 
 <div class="project">
@@ -110,15 +47,15 @@ a {
 <a href="https://metode.rom.no/articles/essay/closed-for-renovation-exhibition-as-method-for-unworlding" target="_blank"
    data-image="YOUR-IMAGE-2.jpg">
 "Closed for Renovation: Exhibition as Method for (Un)worlding"
-</a> article published in Metode Vol. 4: Exhibition as Method (ROM, online)
+</a> published in Metode Vol. 4: Exhibition as Method
 </div>
 
 <div class="project">
 08/2025  
 <a href="https://hverdag.sumupstore.com/product/a-table-is-a-wall-a-door-a-home" target="_blank"
    data-image="YOUR-IMAGE-3.jpg">
-"A table is a wall a door a home"
-</a> book published by Hverdag Books (Moss, NO)
+"A table is a wall, a door, a home"
+</a> book published by Hverdag Books
 </div>
 
 <div class="project">
@@ -134,7 +71,7 @@ a {
 <a href="https://dilettantearmy.com/articles/vampire-clubs" target="_blank"
    data-image="YOUR-IMAGE-5.jpg">
 "Vampire Clubs"
-</a> article written with Sara Clugage and Matilda Moors for Party As Form, published by Dilettante Army / PRAKSIS Presents
+</a> with Sara Clugage and Matilda Moors, Dilettante Army / PRAKSIS
 </div>
 
 <div class="project">
@@ -142,7 +79,7 @@ a {
 <a href="https://www.contemporaryartstavanger.no/building-a-better-world-part-ii-opening-methods/" target="_blank"
    data-image="YOUR-IMAGE-6.jpg">
 "Building a Better World Part II: Opening Methods"
-</a> essay for Contemporary Art Stavanger
+</a> Contemporary Art Stavanger
 </div>
 
 <div class="project">
@@ -150,48 +87,49 @@ a {
 <a href="https://www.contemporaryartstavanger.no/building-a-better-world-function-malfunction-and-unruly-bodies/" target="_blank"
    data-image="YOUR-IMAGE-7.jpg">
 "Building a Better World Part I: Function, Malfunction and Unruly Bodies"
-</a> essay for Contemporary Art Stavanger
+</a> Contemporary Art Stavanger
 </div>
 
 <div class="project">
 12/2023  
-"The Eternal Party: Illusion and transgression in the vampire club scene" in Party Planner Vol. 3: Party Trick (Office Party, INT)
+"The Eternal Party: Illusion and transgression in the vampire club scene"
+in Party Planner Vol. 3, Office Party
 </div>
 
 <div class="project">
 09/2022  
-"The Superb Lyrebird" in fem tusen og fem (fanzine edited by Nayara Leite, Bergen)
+"The Superb Lyrebird"
+in fem tusen og fem, edited by Nayara Leite
 </div>
 
 <div class="project">
 03/2022  
-<a href="https://karmaklubb.com/statz_rainbow-palace" target="_blank"
+<a href="https://karmaklubb.com/" target="_blank"
    data-image="YOUR-IMAGE-8.jpg">
 "Rainbow Palace"
-</a> published by Karmaklubb* and IGWTLI; also presented at METEOR Festival, Open Out Festival, and Site Writing archive (Jane Rendell)
+</a> Karmaklubb*, IGWTLI, METEOR Festival, Open Out Festival, Site Writing archive (Jane Rendell)
 </div>
 
 <div class="project">
 2021  
-"FiresNearMe" in Robida Magazine Issue 7: forest (Topolò, IT)
+"FiresNearMe" Robida Magazine Issue 7, Topolò
 </div>
 
 <div class="project">
 2020  
-"The House: Moving In" in Immediate Spaces 16–19 (Park Books, Zürich)
+"The House: Moving In" Immediate Spaces 16–19, Park Books
 </div>
 
 <div class="project">
 2019  
-"Ghostwriting Files: Adding a voice to this polyphonic dialogue" co-authored with María Mazzanti, published by Het Nieuwe Instituut
+"Ghostwriting Files" with María Mazzanti, Het Nieuwe Instituut
 </div>
 
 <div class="project">
 2019  
-<a href="https://www.sandberg.nl/media/document/original/maike_statz_out_of_place_out_of_time1553695037.pdf" target="_blank"
-   data-image="YOUR-IMAGE-9.jpg">
+<a href="https://www.sandberg.nl/media/document/original/maike_statz_out_of_place_out_of_time1553695037.pdf" target="_blank">
 "Out of Place, Out of Time"
-</a> MA thesis, Sandberg Instituut
+</a> Master thesis, Sandberg Instituut
 </div>
 
 <script>
@@ -218,6 +156,7 @@ function animate() {
 }
 animate();
 
+/* hover images */
 document.querySelectorAll("a[data-image]").forEach(link => {
     link.addEventListener("mouseenter", () => {
         hoverImage.src = link.getAttribute("data-image");

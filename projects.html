@@ -3,80 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Projects</title>
 
+<link rel="shortcut icon" type="image/png" href="https://www.dropbox.com/s/j7poexfxv7azbsb/favicon.jpg?raw=1"/>
+
+<!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-<style>
-body {
-    background-color: lavender;
-    font-family: 'Lora', serif;
-    line-height: 1.7;
-    margin: 20px;
-    color: #191970;
-}
+<!-- Global stylesheet -->
+<link rel="stylesheet" href="style.css">
 
-/* NAV */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: black;
-}
-
-nav a[href="projects.html"] {
-    font-weight: 600;
-    text-decoration: underline;
-}
-
-/* TYPOGRAPHY */
-h1 {
-    margin-bottom: 30px;
-}
-
-.project {
-    margin-bottom: 22px;
-}
-
-a {
-    color: #8B0000;
-}
-
-/* 👻 GHOST IMAGE */
-.hover-image {
-    position: fixed;
-    width: 340px;
-    pointer-events: none;
-    z-index: 1000;
-
-    opacity: 0;
-    transform: translate(-50%, -50%);
-    
-    filter: blur(2px);
-    transition: opacity 0.6s ease;
-
-    mix-blend-mode: multiply;
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .hover-image {
-        display: none !important;
-    }
-}
-</style>
 </head>
 
 <body>
@@ -84,17 +21,17 @@ a {
 <nav>
 <ul>
     <li><a href="index.html">Maike Statz</a></li>
-    <li><a href="projects.html">Projects</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a class="active" href="projects.html">Projects</a></li>
     <li><a href="writing.html">Writing</a></li>
     <li><a href="talks.html">Talks and Workshops</a></li>
-    <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
 </ul>
 </nav>
 
 <h1>Projects</h1>
 
-<!-- 👻 ghost image -->
+<!-- 👻 ghost image system -->
 <img id="hoverImage" class="hover-image" src="">
 
 <div class="project">
@@ -195,9 +132,11 @@ function animate() {
 }
 animate();
 
+/* hover images */
 document.querySelectorAll("a[data-image]").forEach(link => {
     link.addEventListener("mouseenter", () => {
         hoverImage.src = link.getAttribute("data-image");
+
         setTimeout(() => {
             hoverImage.style.opacity = 0.6;
         }, 80);
