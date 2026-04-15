@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Talks and Workshops</title>
 
-<!-- Serif font (Lora by Olga Karpushina) -->
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
 <style>
@@ -17,7 +16,7 @@ body {
     color: #191970;
 }
 
-/* NAV */
+/* NAV (consistent system) */
 nav ul {
     list-style: none;
     padding: 0;
@@ -42,10 +41,11 @@ h1 {
     margin-bottom: 30px;
 }
 
-.entry {
-    margin-bottom: 25px;
+.project {
+    margin-bottom: 22px;
 }
 
+/* LINKS */
 a {
     color: #8B0000;
 }
@@ -95,47 +95,47 @@ a {
 
 <h1>Talks and Workshops</h1>
 
-<!-- 👻 Ghost image -->
+<!-- 👻 ghost image -->
 <img id="hoverImage" class="hover-image" src="">
 
-<div class="entry">
+<div class="project">
 02/2024 Guest speaker  
 <a href="https://kunstnerneshus.no/en/program/events/karmaklubb-friends" target="_blank"
    data-image="YOUR-IMAGE-URL-1.jpg">
 “Art and public space: Queer in/visibility as activism”
-</a>
+</a> symposium organised by Karmaklubb* at Kunstnernes Hus, Oslo
 </div>
 
-<div class="entry">
+<div class="project">
 09/2023 Co-organiser and speaker (NOGOODS)  
 <a href="https://rom.no/en/news/events/making-public-utopias" target="_blank"
    data-image="YOUR-IMAGE-URL-2.jpg">
 “Making Public Utopias”
-</a>
+</a> round table with Exutoire, Itziar González Virós and Nora-Swantje Almes at ROM, Oslo
 </div>
 
-<div class="entry">
+<div class="project">
 09/2022 Guest speaker (NOGOODS)  
 <a href="https://www.kunsthall.no/en/media/plattformqueer-spaces/" target="_blank"
    data-image="YOUR-IMAGE-URL-3.jpg">
 “Queer Spaces?”
-</a>
+</a> Plattform lecture and debate series at Bergen Kunsthall
 </div>
 
-<div class="entry">
+<div class="project">
 2021  
 <a href="https://karmaklubb.com/maike_danja" target="_blank"
    data-image="YOUR-IMAGE-URL-4.jpg">
 “A World of One’s Own”
-</a>
+</a> performative online lecture with Danja Burchard, hosted by Karmaklubb*
 </div>
 
-<div class="entry">
+<div class="project">
 2020 Guest speaker  
 <a href="http://nidacolony.lt/en/1666-nac-library-talks-aspirational-architecture" target="_blank"
    data-image="YOUR-IMAGE-URL-5.jpg">
 “Aspirational & Architectures”
-</a>
+</a> NAC Library Talks hosted by NIDA Art Colony, Vilnius
 </div>
 
 <script>
@@ -146,16 +146,16 @@ let mouseY = 0;
 let ghostX = 0;
 let ghostY = 0;
 
-// track mouse
+/* track mouse */
 document.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
 });
 
-// ghost lag animation
+/* ghost movement */
 function animate() {
     ghostX += (mouseX - ghostX) * 0.08;
-    ghostY += (mouseY - mouseY) * 0.08;
+    ghostY += (mouseY - ghostY) * 0.08;
 
     hoverImage.style.left = ghostX + "px";
     hoverImage.style.top = ghostY + "px";
@@ -164,9 +164,8 @@ function animate() {
 }
 animate();
 
-// hover behavior
+/* hover images */
 document.querySelectorAll("a[data-image]").forEach(link => {
-
     link.addEventListener("mouseenter", () => {
         hoverImage.src = link.getAttribute("data-image");
 
