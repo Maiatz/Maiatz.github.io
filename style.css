@@ -6,6 +6,11 @@ body {
     color: #191970;
 }
 
+.container {
+    max-width: 650px;
+    padding-right: 20px;
+}
+
 /* =======================
    NAVIGATION (GLOBAL)
 ======================= */
@@ -88,4 +93,9 @@ a {
     .hover-image {
         display: none !important;
     }
+}
+
+footer {
+    font-size: 14px;
+    opacity: 0.6;
 }
