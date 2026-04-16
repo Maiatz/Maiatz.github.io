@@ -37,7 +37,7 @@
    data-image="images/hosting-space-book.jpg">
 "Hosting Space"
 </a>
-book published by Hordaland Kunstsenter and Errant Bodies Press, Bergen / Berlin
+book published by Hordaland Kunstsenter and Errant Bodies Press, Bergen and Berlin
 </div>
 
 <div class="project">
@@ -55,7 +55,7 @@ article published in Metode Vol. 4: Exhibition as Method
    data-image="images/table-book.jpg">
 "A table is a wall, a door, a home"
 </a>
-book published by Hverdag Books
+artist book published by Hverdag Books
 </div>
 
 <div class="project">
@@ -96,13 +96,19 @@ essay, Contemporary Art Stavanger
 
 <div class="project">
 12/2023  
-"The Eternal Party: Illusion and transgression in the vampire club scene"  
+<a href="https://www.officeparty.biz/project/party-trick" target="_blank"
+   data-image="images/eternal-party.jpg">
+"The Eternal Party: Illusion and transgression in the vampire club scene" 
+</a> 
 in *Party Planner Vol. 3*, Office Party
 </div>
 
 <div class="project">
 09/2022  
+<a href="https://nayaraleite.com/fem-tusen-og-fem" target="_blank"
+   data-image="images/superb.jpg">
 "The Superb Lyrebird"  
+</a>
 in *fem tusen og fem*, edited by Nayara Leite
 </div>
 
@@ -146,15 +152,31 @@ Master thesis, Sandberg Instituut
 <script>
 const hoverImage = document.getElementById("hoverImage");
 
-document.addEventListener("mousemove", (e) => {
-    const y = e.clientY;
-    hoverImage.style.top = (y * 0.9) + "px";
-});
+function getRandomPosition() {
+    const padding = 40;
+
+    const minX = window.innerWidth * 0.55;
+    const maxX = window.innerWidth - 320 - padding;
+
+    const minY = padding;
+    const maxY = window.innerHeight * 0.45;
+
+    const x = Math.random() * (maxX - minX) + minX;
+    const y = Math.random() * (maxY - minY) + minY;
+
+    return { x, y };
+}
 
 document.querySelectorAll("a[data-image]").forEach(link => {
 
     link.addEventListener("mouseenter", () => {
         hoverImage.src = link.getAttribute("data-image");
+
+        const pos = getRandomPosition();
+
+        hoverImage.style.left = pos.x + "px";
+        hoverImage.style.top = pos.y + "px";
+
         hoverImage.style.opacity = 0.9;
     });
 

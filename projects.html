@@ -39,7 +39,7 @@
    data-image="images/a-table-is.jpg">
 "A table is a wall, a door, a home"
 </a>
-artist, solo exhibition, curated by Neatlaidība, Part Time Gallery, Riga LV
+solo exhibition, curated by Neatlaidība, Part Time Gallery, Riga LV
 </div>
 
 <!-- 2 -->
@@ -50,7 +50,7 @@ artist, solo exhibition, curated by Neatlaidība, Part Time Gallery, Riga LV
    data-image="images/hosting-infrastructure.jpg">
 "Hosting Infrastructures"
 </a>
-artist, exhibition and artistic collaboration with Fergus Tibbs, Isotop Fellesatelier Bergen
+exhibition and artistic collaboration with Fergus Tibbs, Isotop Fellesatelier Bergen
 </div>
 
 <!-- 3 -->
@@ -61,7 +61,7 @@ artist, exhibition and artistic collaboration with Fergus Tibbs, Isotop Fellesat
    data-image="images/intransit.jpg">
 "INTRANSIT"
 </a>
-curator, with Maud Ceuterick and Aleksandra Ivashkevich, architecture film program, Bergen arkitektforening + Cinemateket Bergen
+curator with Maud Ceuterick and Aleksandra Ivashkevich, architecture film program, Bergen arkitektforening + Cinemateket Bergen
 </div>
 
 <!-- 4 -->
@@ -83,7 +83,7 @@ curator and designer, exhibition, public event programme and interior design, Ho
    data-image="images/dissident-publics.jpg">
 "Dissident Publics: Future Artefacts of Queer Methodologies"
 </a>
-curator, with Exutoire and NOGOODS, exhibition and event programme, ROM, Oslo
+curator with Exutoire and NOGOODS, exhibition and event programme, ROM, Oslo
 </div>
 
 <!-- 6 -->
@@ -91,7 +91,7 @@ curator, with Exutoire and NOGOODS, exhibition and event programme, ROM, Oslo
 2023–2024  
 <a href="https://www.instagram.com/p/Cp5LTmCo7Q8/" 
    target="_blank"
-   data-image="images/bias.jpg">
+   data-image="images/bias.png">
 "bias: bodies in architecture and structures"
 </a>
 editor, magazine issue 1 “empathy” and 2 “pleasure”, published by NOGOODS
@@ -105,7 +105,7 @@ editor, magazine issue 1 “empathy” and 2 “pleasure”, published by NOGOOD
    data-image="images/nogoods.jpg">
 "NOGOODS"
 </a>
-artistic director, with Danja Burchard and Francesca Scapinello, project space for art, architecture and performance, Bergen
+artistic director with Danja Burchard and Francesca Scapinello, project space for art, architecture and performance, Bergen
 </div>
 
 <!-- 8 -->
@@ -116,7 +116,7 @@ artistic director, with Danja Burchard and Francesca Scapinello, project space f
    data-image="images/loose-parts.jpg">
 "Løse deler"
 </a>
-artist, furniture installation for *Over regnbuen*, Preus Museum, Horten
+furniture installation for *Over regnbuen*, Preus Museum, Horten
 </div>
 
 <!-- 9 -->
@@ -127,7 +127,7 @@ artist, furniture installation for *Over regnbuen*, Preus Museum, Horten
    data-image="images/capillary-malformation.jpg">
 "Capillary Malformation"
 </a>
-artist, audio walk and installation, Studio for Immediate Spaces graduation exhibition, Amsterdam
+audio walk and installation, Studio for Immediate Spaces graduation exhibition, Amsterdam
 </div>
 
 </div>
@@ -135,15 +135,31 @@ artist, audio walk and installation, Studio for Immediate Spaces graduation exhi
 <script>
 const hoverImage = document.getElementById("hoverImage");
 
-document.addEventListener("mousemove", (e) => {
-    const y = e.clientY;
-    hoverImage.style.top = (y * 0.9) + "px";
-});
+function getRandomPosition() {
+    const padding = 40;
+
+    const minX = window.innerWidth * 0.55;
+    const maxX = window.innerWidth - 320 - padding;
+
+    const minY = padding;
+    const maxY = window.innerHeight * 0.45;
+
+    const x = Math.random() * (maxX - minX) + minX;
+    const y = Math.random() * (maxY - minY) + minY;
+
+    return { x, y };
+}
 
 document.querySelectorAll("a[data-image]").forEach(link => {
 
     link.addEventListener("mouseenter", () => {
         hoverImage.src = link.getAttribute("data-image");
+
+        const pos = getRandomPosition();
+
+        hoverImage.style.left = pos.x + "px";
+        hoverImage.style.top = pos.y + "px";
+
         hoverImage.style.opacity = 0.9;
     });
 
