@@ -43,25 +43,43 @@ nav a {
     transition: opacity 0.2s ease;
 }
 
-/* hover */
 nav a:hover {
     opacity: 1;
 }
 
-/* active page (soft, no underline) */
+/* active page indicator (soft, not underline) */
 nav a.active {
     opacity: 0.45;
 }
 
 /* =========================
-   CONTENT BLOCKS
+   PROJECT ARCHIVE SYSTEM
 ========================= */
 
 .project {
-    margin-bottom: 22px;
+    margin-bottom: 28px;
 }
 
-/* links inside content */
+/* date line */
+.date {
+    font-size: 13px;
+    opacity: 0.55;
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+}
+
+/* metadata block */
+.meta {
+    margin-top: 6px;
+    font-size: 15px;
+    opacity: 0.85;
+    line-height: 1.5;
+}
+
+/* =========================
+   LINKS
+========================= */
+
 a {
     color: #8B0000;
     text-decoration: none;
@@ -72,7 +90,7 @@ a:hover {
 }
 
 /* =========================
-   RIGHT-SIDE HOVER IMAGE
+   HOVER IMAGE (PROJECTS)
 ========================= */
 
 .hover-image {
