@@ -31,113 +31,93 @@
 
 <div class="container">
 
-<!-- 1 -->
 <div class="project">
-08/2025  
+<span class="date">08/2025</span>  
 <a href="https://echogonewrong.com/photo-reportage-from-the-exhibition-a-table-is-a-wall-a-door-a-home-by-maike-statz-at-the-part-time-gallery/" 
    target="_blank"
    data-image="images/a-table-is.jpg">
 "A table is a wall, a door, a home"
-</a>
+</a>,
 solo exhibition, curated by Neatlaidība, Part Time Gallery, Riga
 </div>
 
-<!-- 2 -->
 <div class="project">
-09/2024  
+<span class="date">09/2024</span>  
 <a href="https://www.fergustibbs.com/projects/hosting-infrastructure-isotop-version" 
    target="_blank"
    data-image="images/fergus.jpg">
 "Hosting Infrastructures"
-</a>
+</a>,
 collaborative exhibition with Fergus Tibbs, Isotop Fellesatelier, Bergen
 </div>
 
-<!-- 3 -->
 <div class="project">
-05/2024  
+<span class="date">05/2024</span>  
 <a href="https://www.arkitektur.no/aktuelt/arkitektur/nye-filmdager-i-bergen/" 
    target="_blank"
    data-image="images/intransit.jpg">
 "INTRANSIT"
-</a>
+</a>,
 architecture film program, curator with Maud Ceuterick and Aleksandra Ivashkevich, Bergen arkitektforening and Cinemateket Bergen
 </div>
 
-<!-- 4 -->
 <div class="project">
-06–08/2023  
+<span class="date">06–08/2023</span>  
 <a href="https://www.kunstsenter.no/#/program/617" 
    target="_blank"
    data-image="images/hosting-space.jpg">
 "Hosting Space"
-</a>
+</a>,
 exhibition, public event programme and renovation, curator and designer, Hordaland kunstsenter, Bergen
 </div>
 
-<!-- 5 -->
 <div class="project">
-01/2022–06/2023  
+<span class="date">01/2022–06/2023</span>  
 <a href="https://rom.no/program/utstillinger/dissident-publics-future-artefacts-of-queer-methodologies" 
    target="_blank"
    data-image="images/dissident-publics.jpg">
 "Dissident Publics: Future Artefacts of Queer Methodologies"
-</a>
+</a>,
 exhibition and event programme, curator with Exutoire and NOGOODS, ROM, Oslo
 </div>
 
-<!-- 6 -->
 <div class="project">
-2023–2024  
-<a href="https://www.instagram.com/p/Cp5LTmCo7Q8/" 
-   target="_blank"
-   data-image="images/bias.jpg">
-"bias: bodies in architecture and structures"
-</a>
-magazine issue 1 “empathy” and 2 “pleasure”, editor with Danja Burchard and Francesca Scapinello, published by NOGOODS, Bergen
-</div>
-
-<!-- 7 -->
-<div class="project">
-2022–2024  
+<span class="date">2022–2024</span>  
 <a href="https://www.instagram.com/p/Cp5LTmCo7Q8/" 
    target="_blank"
    data-image="images/nogoods.jpg">
 "NOGOODS"
-</a>
+</a>,
 project space for art, architecture and performance, founder and artistic director with Danja Burchard and Francesca Scapinello, Bergen
 </div>
 
-<!-- 8 -->
 <div class="project">
-05–12/2022  
+<span class="date">05–12/2022</span>  
 <a href="https://preusmuseum.no/en/over-the-rainbow" 
    target="_blank"
    data-image="images/loose-parts.jpg">
 "Løse deler"
-</a>
-furniture installation for *Over regnbuen*, curated by Hilde Herming, Preus Museum, Horten, NO
+</a>,
+furniture installation for <em>Over regnbuen</em>, curated by Hilde Herming, Preus Museum, Horten, NO
 </div>
 
-<!-- 9 -->
 <div class="project">
-2021  
+<span class="date">2021</span>  
 <a href="https://issuu.com/bitteatergarasjen/docs/meteor_festivalprogram_2021_web_enkeltsider" 
    target="_blank"
    data-image="images/rainbow-palace.jpg">
 "Rainbow Palace"
-</a>
-Video and Performance, Open Out Festival: Borders/Lines and METEOR Festival, Tromsø and Bergen
+</a>,
+video and performance, Open Out Festival and METEOR Festival, Tromsø and Bergen
 </div>
 
-<!-- 10 -->
 <div class="project">
-2019  
+<span class="date">2019</span>  
 <a href="https://sandberg.nl/graduation2019/maike-statz" 
    target="_blank"
    data-image="images/capillary-malformation.jpg">
 "Capillary Malformation"
-</a>
+</a>,
 audio walk and installation, Studio for Immediate Spaces graduation exhibition, Amsterdam
 </div>
 
@@ -168,20 +148,14 @@ document.querySelectorAll("a[data-image]").forEach(link => {
 
     link.addEventListener("mouseenter", () => {
         currentLink = link;
-
-        // cancel any previous hover delay
         clearTimeout(hoverTimeout);
-
-        // hide current image immediately
         hoverImage.style.opacity = 0;
 
         hoverTimeout = setTimeout(() => {
             if (currentLink === link) {
-
                 hoverImage.src = link.getAttribute("data-image");
 
                 const pos = getRandomPosition();
-
                 hoverImage.style.left = pos.x + "px";
                 hoverImage.style.top = pos.y + "px";
 
