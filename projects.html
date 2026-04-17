@@ -146,6 +146,9 @@ audio walk and installation, Studio for Immediate Spaces graduation exhibition, 
 <script>
 const hoverImage = document.getElementById("hoverImage");
 
+let currentLink = null;
+let hoverTimeout = null;
+
 function getRandomPosition() {
     const padding = 40;
 
@@ -164,17 +167,32 @@ function getRandomPosition() {
 document.querySelectorAll("a[data-image]").forEach(link => {
 
     link.addEventListener("mouseenter", () => {
-        hoverImage.src = link.getAttribute("data-image");
+        currentLink = link;
 
-        const pos = getRandomPosition();
+        // cancel any previous hover delay
+        clearTimeout(hoverTimeout);
 
-        hoverImage.style.left = pos.x + "px";
-        hoverImage.style.top = pos.y + "px";
+        // hide current image immediately
+        hoverImage.style.opacity = 0;
 
-        hoverImage.style.opacity = 0.9;
+        hoverTimeout = setTimeout(() => {
+            if (currentLink === link) {
+
+                hoverImage.src = link.getAttribute("data-image");
+
+                const pos = getRandomPosition();
+
+                hoverImage.style.left = pos.x + "px";
+                hoverImage.style.top = pos.y + "px";
+
+                hoverImage.style.opacity = 0.9;
+            }
+        }, 80);
     });
 
     link.addEventListener("mouseleave", () => {
+        currentLink = null;
+        clearTimeout(hoverTimeout);
         hoverImage.style.opacity = 0;
     });
 
