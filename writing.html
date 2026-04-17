@@ -159,8 +159,9 @@ Master thesis, Sandberg Instituut
 <script>
 const hoverImage = document.getElementById("hoverImage");
 
-let currentLink = null;
+let activeLink = null;
 let hoverTimeout = null;
+let currentImageToken = 0;
 
 function getRandomPosition() {
     const padding = 40;
@@ -171,34 +172,59 @@ function getRandomPosition() {
     const minY = padding;
     const maxY = window.innerHeight * 0.45;
 
-    const x = Math.random() * (maxX - minX) + minX;
-    const y = Math.random() * (maxY - minY) + minY;
-
-    return { x, y };
+    return {
+        x: Math.random() * (maxX - minX) + minX,
+        y: Math.random() * (maxY - minY) + minY
+    };
 }
+
+// Preload images (prevents lag + flashing)
+document.querySelectorAll("a[data-image]").forEach(link => {
+    const img = new Image();
+    img.src = link.getAttribute("data-image");
+});
 
 document.querySelectorAll("a[data-image]").forEach(link => {
 
     link.addEventListener("mouseenter", () => {
-        currentLink = link;
+        activeLink = link;
+
         clearTimeout(hoverTimeout);
         hoverImage.style.opacity = 0;
 
+        const src = link.getAttribute("data-image");
+        const token = ++currentImageToken; // unique run ID
+
         hoverTimeout = setTimeout(() => {
-            if (currentLink === link) {
-                hoverImage.src = link.getAttribute("data-image");
+
+            // cancel if user already moved on
+            if (activeLink !== link) return;
+            if (token !== currentImageToken) return;
+
+            const img = new Image();
+
+            img.onload = () => {
+                // final safety check (prevents “stuck old image”)
+                if (activeLink !== link) return;
+                if (token !== currentImageToken) return;
+
+                hoverImage.src = src;
 
                 const pos = getRandomPosition();
                 hoverImage.style.left = pos.x + "px";
                 hoverImage.style.top = pos.y + "px";
 
                 hoverImage.style.opacity = 0.9;
-            }
-        }, 80);
+            };
+
+            img.src = src;
+
+        }, 40); // reduced delay for responsiveness
     });
 
     link.addEventListener("mouseleave", () => {
-        currentLink = null;
+        activeLink = null;
+        currentImageToken++; // invalidates pending loads
         clearTimeout(hoverTimeout);
         hoverImage.style.opacity = 0;
     });
