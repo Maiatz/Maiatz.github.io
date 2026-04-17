@@ -15,8 +15,11 @@ body {
    GLOBAL CONTAINER
 ========================= */
 
-.container {
+.container,
+nav {
     max-width: 650px;
+    margin-left: 20px;
+    margin-right: auto;
 }
 
 /* =========================
@@ -62,10 +65,7 @@ nav a.active {
 
 /* date line */
 .date {
-    font-size: 13px;
-    opacity: 0.55;
-    margin-bottom: 6px;
-    letter-spacing: 0.02em;
+    font-weight: 600;
 }
 
 /* metadata block */
